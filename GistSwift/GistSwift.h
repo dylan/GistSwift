@@ -16,4 +16,11 @@ FOUNDATION_EXPORT const unsigned char GistSwiftVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <GistSwift/PublicHeader.h>
 
+void initGist();
+void processAudioFrame(float *buffer, unsigned long sample);
+float peakEnergy();
+float rootMeanSquare();
+float spectralDifference();
+float complexSpectralDifference();
+void deinitGist();
 
