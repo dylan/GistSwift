@@ -1,0 +1,4 @@
+c module GistSwiftWrapper {
+    header "./GistSwiftWrapper/GistSwiftWrapper.h"
+    export *
+}

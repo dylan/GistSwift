@@ -9,40 +9,36 @@
 #include <stdio.h>
 #include "Gist.h"
 
-class GistSwift {
-public:
+struct GistSwiftWrapper {
     Gist<float> gist = Gist<float>(512, 44100);
 };
 
-GistSwift *gistSwift;
-
 extern "C" {
-    void initGist() {
-        gistSwift = new GistSwift();
+    struct GistSwiftWrapper* gistInit() {
+        return new GistSwiftWrapper;
     }
 
-    void processAudioFrame(float *buffer, unsigned long sample) {
+    void gistDeinit(struct GistSwiftWrapper* gistSwift) {
+        delete gistSwift;
+    }
+
+    void processAudioFrame(GistSwiftWrapper* gistSwift, float *buffer, unsigned long sample) {
         gistSwift->gist.processAudioFrame(buffer, sample);
     }
 
-    float peakEnergy() {
+    float peakEnergy(GistSwiftWrapper* gistSwift) {
         return gistSwift->gist.peakEnergy();
     }
 
-    float rootMeanSquare() {
+    float rootMeanSquare(GistSwiftWrapper* gistSwift) {
         return gistSwift->gist.rootMeanSquare();
     }
 
-    float spectralDifference() {
+    float spectralDifference(GistSwiftWrapper* gistSwift) {
         return gistSwift->gist.spectralDifference();
     }
 
-    float complexSpectralDifference() {
+    float complexSpectralDifference(GistSwiftWrapper* gistSwift) {
         return gistSwift->gist.complexSpectralDifference();
     }
-
-    void deinitGist() {
-        delete gistSwift;
-    }
 }
-
