@@ -10,7 +10,7 @@ import Foundation
 import GistSwiftWrapper
 
 public final class Gist {
-    let gist = GistSwiftWrapper.gistInit()
+    let gist = GistSwiftWrapper.initGist()
 
     public init() {}
 
@@ -36,6 +36,6 @@ public final class Gist {
     }
 
     deinit {
-        GistSwiftWrapper.gistDeinit(gist)
+        GistSwiftWrapper.deinitGist(gist)
     }
 }

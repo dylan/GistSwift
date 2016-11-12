@@ -14,11 +14,11 @@ struct GistSwiftWrapper {
 };
 
 extern "C" {
-    struct GistSwiftWrapper* gistInit() {
+    struct GistSwiftWrapper* initGist() {
         return new GistSwiftWrapper;
     }
 
-    void gistDeinit(struct GistSwiftWrapper* gistSwift) {
+    void deinitGist(struct GistSwiftWrapper* gistSwift) {
         delete gistSwift;
     }
 

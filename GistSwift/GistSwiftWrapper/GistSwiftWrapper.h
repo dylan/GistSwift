@@ -9,8 +9,8 @@
 #ifndef GistSwiftWrapper_h
 #define GistSwiftWrapper_h
 
-struct GistSwift* gistInit();
-void gistDeinit(struct GistSwift* gistSwift);
+struct GistSwift* initGist();
+void deinitGist(struct GistSwift* gistSwift);
 
 void processAudioFrame(struct GistSwift* gistSwift, float *buffer, unsigned long sample);
 
