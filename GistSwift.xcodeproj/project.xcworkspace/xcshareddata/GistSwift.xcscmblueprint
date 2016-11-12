@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "370189BAA25C395C5C0149C2FD3590A41BEBD8AF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "370189BAA25C395C5C0149C2FD3590A41BEBD8AF" : 9223372036854775807,
+    "10891B290655B74B86C0F69E4E8998435E110F8F" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4FA4D1B8-AB2F-476C-955C-12267DB0FB77",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "370189BAA25C395C5C0149C2FD3590A41BEBD8AF" : "GistSwift\/",
+    "10891B290655B74B86C0F69E4E8998435E110F8F" : "GistSwift\/Gist\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GistSwift",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GistSwift.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:adamstark\/Gist.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "10891B290655B74B86C0F69E4E8998435E110F8F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dylan\/GistSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "370189BAA25C395C5C0149C2FD3590A41BEBD8AF"
+    }
+  ]
+}

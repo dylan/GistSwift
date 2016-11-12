@@ -23,9 +23,9 @@
 		FC7F3F051DD63E5D00E16B3E /* Yin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC7F3EF71DD63E5D00E16B3E /* Yin.cpp */; };
 		FC7F3F061DD63E5D00E16B3E /* Yin.h in Headers */ = {isa = PBXBuildFile; fileRef = FC7F3EF81DD63E5D00E16B3E /* Yin.h */; };
 		FC7F3F091DD63F2200E16B3E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7F3F081DD63F2200E16B3E /* Accelerate.framework */; };
+		FCBAD8E31DD7CDBE0040CB4B /* GistSwiftWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FCBAD8E11DD7CDBE0040CB4B /* GistSwiftWrapper.cpp */; };
+		FCBAD8E41DD7CDBE0040CB4B /* GistSwiftWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = FCBAD8E21DD7CDBE0040CB4B /* GistSwiftWrapper.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		FCFFDBDC1DD78B120026A9F6 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFFDBDB1DD78B120026A9F6 /* Gist.swift */; };
-		FCFFDBE61DD794EC0026A9F6 /* GistSwiftWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FCFFDBE31DD794EC0026A9F6 /* GistSwiftWrapper.cpp */; };
-		FCFFDBE71DD794EC0026A9F6 /* GistSwiftWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = FCFFDBE41DD794EC0026A9F6 /* GistSwiftWrapper.h */; settings = {ATTRIBUTES = (Private, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,9 +47,9 @@
 		FC7F3EF71DD63E5D00E16B3E /* Yin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Yin.cpp; sourceTree = "<group>"; };
 		FC7F3EF81DD63E5D00E16B3E /* Yin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yin.h; sourceTree = "<group>"; };
 		FC7F3F081DD63F2200E16B3E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		FCBAD8E11DD7CDBE0040CB4B /* GistSwiftWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GistSwiftWrapper.cpp; sourceTree = "<group>"; };
+		FCBAD8E21DD7CDBE0040CB4B /* GistSwiftWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GistSwiftWrapper.h; sourceTree = "<group>"; };
 		FCFFDBDB1DD78B120026A9F6 /* Gist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
-		FCFFDBE31DD794EC0026A9F6 /* GistSwiftWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GistSwiftWrapper.cpp; sourceTree = "<group>"; };
-		FCFFDBE41DD794EC0026A9F6 /* GistSwiftWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GistSwiftWrapper.h; sourceTree = "<group>"; };
 		FCFFDBE81DD798CC0026A9F6 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,11 +86,12 @@
 		FC7F3EDB1DD63DCF00E16B3E /* GistSwift */ = {
 			isa = PBXGroup;
 			children = (
+				FCBAD8E11DD7CDBE0040CB4B /* GistSwiftWrapper.cpp */,
+				FCBAD8E21DD7CDBE0040CB4B /* GistSwiftWrapper.h */,
 				FC7F3EDC1DD63DCF00E16B3E /* GistSwift.h */,
 				FCFFDBE81DD798CC0026A9F6 /* module.modulemap */,
 				FC7F3EDD1DD63DCF00E16B3E /* Info.plist */,
 				FCFFDBDB1DD78B120026A9F6 /* Gist.swift */,
-				FCFFDBE21DD794EC0026A9F6 /* GistSwiftWrapper */,
 			);
 			path = GistSwift;
 			sourceTree = "<group>";
@@ -173,15 +174,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FCFFDBE21DD794EC0026A9F6 /* GistSwiftWrapper */ = {
-			isa = PBXGroup;
-			children = (
-				FCFFDBE31DD794EC0026A9F6 /* GistSwiftWrapper.cpp */,
-				FCFFDBE41DD794EC0026A9F6 /* GistSwiftWrapper.h */,
-			);
-			path = GistSwiftWrapper;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -190,13 +182,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7F3F001DD63E5D00E16B3E /* Gist.h in Headers */,
-				FCFFDBE71DD794EC0026A9F6 /* GistSwiftWrapper.h in Headers */,
 				FC7F3EDE1DD63DCF00E16B3E /* GistSwift.h in Headers */,
 				FC7F3EFC1DD63E5D00E16B3E /* CoreTimeDomainFeatures.h in Headers */,
 				FC7F3F061DD63E5D00E16B3E /* Yin.h in Headers */,
 				FC7F3F041DD63E5D00E16B3E /* OnsetDetectionFunction.h in Headers */,
 				FC7F3F021DD63E5D00E16B3E /* MFCC.h in Headers */,
 				FC7F3EFE1DD63E5D00E16B3E /* AccelerateFFT.h in Headers */,
+				FCBAD8E41DD7CDBE0040CB4B /* GistSwiftWrapper.h in Headers */,
 				FC7F3EFA1DD63E5D00E16B3E /* CoreFrequencyDomainFeatures.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,7 +266,7 @@
 				FC7F3EFB1DD63E5D00E16B3E /* CoreTimeDomainFeatures.cpp in Sources */,
 				FCFFDBDC1DD78B120026A9F6 /* Gist.swift in Sources */,
 				FC7F3EFD1DD63E5D00E16B3E /* AccelerateFFT.cpp in Sources */,
-				FCFFDBE61DD794EC0026A9F6 /* GistSwiftWrapper.cpp in Sources */,
+				FCBAD8E31DD7CDBE0040CB4B /* GistSwiftWrapper.cpp in Sources */,
 				FC7F3F051DD63E5D00E16B3E /* Yin.cpp in Sources */,
 				FC7F3F031DD63E5D00E16B3E /* OnsetDetectionFunction.cpp in Sources */,
 				FC7F3EF91DD63E5D00E16B3E /* CoreFrequencyDomainFeatures.cpp in Sources */,
@@ -397,6 +389,7 @@
 					"DEBUG=1",
 					"assert(e)((void)0);",
 				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = GistSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -426,6 +419,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREPROCESSOR_DEFINITIONS = "assert(e)((void)0);";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = GistSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

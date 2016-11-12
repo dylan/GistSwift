@@ -20,6 +20,24 @@ float rootMeanSquare(struct GistSwift* gistSwift);
 
 float spectralDifference(struct GistSwift* gistSwift);
 
+float spectralCentroid(struct GistSwift* gistSwift);
+
+float spectralCrest(struct GistSwift* gistSwift);
+
+float spectralFlatness(struct GistSwift* gistSwift);
+
+float spectralRolloff(struct GistSwift* gistSwift);
+
+float spectralKurtosis(struct GistSwift* gistSwift);
+
+float energyDifference(struct GistSwift* gistSwift);
+
+float spectralDifferenceHWR(struct GistSwift* gistSwift);
+
 float complexSpectralDifference(struct GistSwift* gistSwift);
+
+float highFrequencyContent(struct GistSwift* gistSwift);
+
+float pitch(struct GistSwift* gistSwift);
 
 #endif /* GistSwiftWrapper_h */
