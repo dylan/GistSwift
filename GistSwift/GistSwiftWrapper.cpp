@@ -10,73 +10,76 @@
 #include <stdio.h>
 
 struct GistSwiftWrapper {
-  Gist<float> gist = Gist<float>(512, 44100);
+    Gist<float> gist;
+    GistSwiftWrapper(int audioFrameSize, int fs) :  gist(Gist<float>(audioFrameSize, fs)) {}
 };
 
 extern "C" {
-    struct GistSwiftWrapper* initGist() {
-      return new GistSwiftWrapper;
+    struct GistSwiftWrapper* initGist(int audioFrameSize, int fs) {
+        return new GistSwiftWrapper(audioFrameSize, fs);
     }
 
     void deinitGist(struct GistSwiftWrapper* gistSwift) {
-      delete gistSwift;
+        delete gistSwift;
     }
 
-    void processAudioFrame(GistSwiftWrapper* gistSwift,
-                           float* buffer,
-                           unsigned long sample) {
-      gistSwift->gist.processAudioFrame(buffer, sample);
-    }
-
-    float peakEnergy(GistSwiftWrapper* gistSwift) {
-      return gistSwift->gist.peakEnergy();
+    void processAudioFrame(GistSwiftWrapper* gistSwift, float* buffer, unsigned long sample) {
+        gistSwift->gist.processAudioFrame(buffer, sample);
     }
 
     float rootMeanSquare(GistSwiftWrapper* gistSwift) {
-      return gistSwift->gist.rootMeanSquare();
+        return gistSwift->gist.rootMeanSquare();
+    }
+
+    float peakEnergy(GistSwiftWrapper* gistSwift) {
+        return gistSwift->gist.peakEnergy();
+    }
+
+    float zeroCrossingRate(GistSwiftWrapper* gistSwift) {
+        return gistSwift->gist.zeroCrossingRate();
     }
 
     float spectralDifference(GistSwiftWrapper* gistSwift) {
-      return gistSwift->gist.spectralDifference();
+        return gistSwift->gist.spectralDifference();
     }
 
     float spectralCentroid(GistSwiftWrapper* gistSwift) {
-      return gistSwift->gist.spectralCentroid();
+        return gistSwift->gist.spectralCentroid();
     }
 
     float spectralCrest(GistSwiftWrapper* gistSwift) {
-      return gistSwift->gist.spectralCrest();
+        return gistSwift->gist.spectralCrest();
     }
 
     float spectralFlatness(GistSwiftWrapper* gistSwift) {
-      return gistSwift->gist.spectralFlatness();
+        return gistSwift->gist.spectralFlatness();
     }
 
     float spectralRolloff(GistSwiftWrapper* gistSwift) {
-      return gistSwift->gist.spectralRolloff();
+        return gistSwift->gist.spectralRolloff();
     }
 
     float spectralKurtosis(GistSwiftWrapper* gistSwift) {
-      return gistSwift->gist.spectralKurtosis();
+        return gistSwift->gist.spectralKurtosis();
     }
 
     float energyDifference(GistSwiftWrapper* gistSwift) {
-      return gistSwift->gist.energyDifference();
+        return gistSwift->gist.energyDifference();
     }
 
     float spectralDifferenceHWR(GistSwiftWrapper* gistSwift) {
-      return gistSwift->gist.spectralDifferenceHWR();
+        return gistSwift->gist.spectralDifferenceHWR();
     }
 
     float complexSpectralDifference(GistSwiftWrapper* gistSwift) {
-      return gistSwift->gist.complexSpectralDifference();
+        return gistSwift->gist.complexSpectralDifference();
     }
 
     float highFrequencyContent(GistSwiftWrapper* gistSwift) {
-      return gistSwift->gist.highFrequencyContent();
+        return gistSwift->gist.highFrequencyContent();
     }
 
     float pitch(GistSwiftWrapper* gistSwift) {
-         return gistSwift->gist.pitch();
+        return gistSwift->gist.pitch();
     }
 }

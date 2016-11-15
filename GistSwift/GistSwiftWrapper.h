@@ -9,14 +9,17 @@
 #ifndef GistSwiftWrapper_h
 #define GistSwiftWrapper_h
 
-struct GistSwift* initGist();
+struct GistSwift* initGist(int audioFrameSize, int sampleRate);
+
 void deinitGist(struct GistSwift* gistSwift);
 
 void processAudioFrame(struct GistSwift* gistSwift, float *buffer, unsigned long sample);
 
+float rootMeanSquare(struct GistSwift* gistSwift);
+
 float peakEnergy(struct GistSwift* gistSwift);
 
-float rootMeanSquare(struct GistSwift* gistSwift);
+float zeroCrossingRate(struct GistSwift* gistSwift);
 
 float spectralDifference(struct GistSwift* gistSwift);
 
