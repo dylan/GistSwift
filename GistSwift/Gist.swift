@@ -107,12 +107,22 @@ public final class Gist {
 
     /// - returns: The Mel Frequency Spectrum.
     public func melFrequencySpectrum() -> [Float] {
-        return [GistSwiftWrapper.melFrequencySpectrum(gist).pointee]
+        let value = GistSwiftWrapper.melFrequencySpectrum(gist)
+        let bufferPointer = UnsafeBufferPointer<Float>(start: value.elements, count: Int(value.numElements))
+        defer {
+            free(value.elements)
+        }
+        return Array(bufferPointer)
     }
 
     /// - returns: the Mel Frequency Cepstral Coefficients as an array of ```Float```.
     public func melFrequencyCepstralCoefficients() -> [Float] {
-        return [GistSwiftWrapper.melFrequencyCepstralCoefficients(gist).pointee]
+        let value = GistSwiftWrapper.melFrequencyCepstralCoefficients(gist)
+        let bufferPointer = UnsafeBufferPointer<Float>(start: value.elements, count: Int(value.numElements))
+        defer {
+            free(value.elements)
+        }
+        return Array(bufferPointer)
     }
 
     deinit {
