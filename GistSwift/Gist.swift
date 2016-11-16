@@ -1,10 +1,7 @@
-//
-//  Gist.swift
-//  GistSwift
-//
-//  Created by Dylan Wreggelsworth on 11/12/16.
-//  Copyright © 2016 Dylan Wreggelsworth. All rights reserved.
-//
+/////    ___ _    _   ___        _  __ _
+////    / __(_)__| |_/ __|_ __ _(_)/ _| |_
+///    | (_ | (_-<  _\__ \ V  V / |  _|  _|
+//      \___|_/__/\__|___/\_/\_/|_|_|  \__|
 
 import Foundation
 import GistSwiftWrapper
@@ -12,13 +9,21 @@ import GistSwiftWrapper
 public final class Gist {
     fileprivate let gist: OpaquePointer
 
+    /// The class for all performing all Gist audio analyses.
+    /// - parameters:
+    ///     - frameSize:   The input audio frame size.
+    ///     - sampleRate: The input sample rate.
     public init(frameSize: Int, sampleRate: Int) {
         gist = initGist(Int32(frameSize), Int32(sampleRate))
     }
 
-    public func processAudio(frame: [Float], sample: UInt) {
+    /// Process an audio frame.
+    /// - parameters:
+    ///     - frame:   The audio frame to process.
+    ///     - samples: The number of samples in the audio frame.
+    public func processAudio(frame: [Float]) {
         var frame = frame
-        GistSwiftWrapper.processAudioFrame(gist, &frame, sample)
+        GistSwiftWrapper.processAudioFrame(gist, &frame, UInt(frame.count))
     }
 
 // MARK: - Core Time Domain Features
@@ -96,6 +101,18 @@ public final class Gist {
     /// - returns: A monophonic pitch estimate according to the Yin algorithm.
     public func pitch() -> Float {
         return GistSwiftWrapper.pitch(gist)
+    }
+
+// MARK: - Mel Frequency Related
+
+    /// - returns: The Mel Frequency Spectrum.
+    public func melFrequencySpectrum() -> [Float] {
+        return [GistSwiftWrapper.melFrequencySpectrum(gist).pointee]
+    }
+
+    /// - returns: the Mel Frequency Cepstral Coefficients as an array of ```Float```.
+    public func melFrequencyCepstralCoefficients() -> [Float] {
+        return [GistSwiftWrapper.melFrequencyCepstralCoefficients(gist).pointee]
     }
 
     deinit {

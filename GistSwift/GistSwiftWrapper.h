@@ -1,10 +1,7 @@
-//
-//  GistSwiftWrapper.h
-//  GistSwift
-//
-//  Created by Dylan Wreggelsworth on 11/12/16.
-//  Copyright © 2016 Dylan Wreggelsworth. All rights reserved.
-//
+/////    ___ _    _   ___        _  __ _
+////    / __(_)__| |_/ __|_ __ _(_)/ _| |_
+///    | (_ | (_-<  _\__ \ V  V / |  _|  _|
+//      \___|_/__/\__|___/\_/\_/|_|_|  \__|
 
 #ifndef GistSwiftWrapper_h
 #define GistSwiftWrapper_h
@@ -43,4 +40,7 @@ float highFrequencyContent(struct GistSwift* gistSwift);
 
 float pitch(struct GistSwift* gistSwift);
 
+float *melFrequencySpectrum(struct GistSwift* gistSwift);
+
+float *melFrequencyCepstralCoefficients(struct GistSwift* gistSwift);
 #endif /* GistSwiftWrapper_h */

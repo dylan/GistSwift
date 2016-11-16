@@ -1,10 +1,7 @@
-//
-//  GistSwift.h
-//  GistSwift
-//
-//  Created by Dylan Wreggelsworth on 11/11/16.
-//  Copyright © 2016 Dylan Wreggelsworth. All rights reserved.
-//
+/////    ___ _    _   ___        _  __ _
+////    / __(_)__| |_/ __|_ __ _(_)/ _| |_
+///    | (_ | (_-<  _\__ \ V  V / |  _|  _|
+//      \___|_/__/\__|___/\_/\_/|_|_|  \__|
 
 #import <UIKit/UIKit.h>
 
