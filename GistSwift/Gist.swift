@@ -124,6 +124,7 @@ public final class Gist {
         }
         return Array(bufferPointer)
     }
+// MARK: -
 
     deinit {
         GistSwiftWrapper.deinitGist(gist)
