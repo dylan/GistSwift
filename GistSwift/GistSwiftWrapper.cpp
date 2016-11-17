@@ -6,6 +6,11 @@
 #include "Gist.h"
 #include <stdio.h>
 
+typedef struct FloatArray {
+    int numElements;
+    float *elements;
+} FloatArray;
+
 struct GistSwiftWrapper {
     Gist<float> gist;
     GistSwiftWrapper(int audioFrameSize, int fs) :  gist(Gist<float>(audioFrameSize, fs)) {}
@@ -22,6 +27,20 @@ extern "C" {
 
     void processAudioFrame(GistSwiftWrapper* gistSwift, float* buffer, unsigned long sample) {
         gistSwift->gist.processAudioFrame(buffer, sample);
+    }
+
+    FloatArray magnitudeSpectrum(GistSwiftWrapper* gistSwift) {
+        std::vector<float> vec = gistSwift->gist.getMagnitudeSpectrum();
+        FloatArray result = {
+            .numElements =  static_cast<int>(vec.size()),
+            .elements = (float *)malloc(sizeof(float) * vec.size())
+        };
+        float *q = result.elements;
+        for (float f : vec) {
+            *q++ = f;
+        }
+
+        return result;
     }
 
     const float rootMeanSquare(GistSwiftWrapper* gistSwift) {
@@ -80,10 +99,6 @@ extern "C" {
         return gistSwift->gist.pitch();
     }
 
-    typedef struct FloatArray {
-        int numElements;
-        float *elements;
-    } FloatArray;
 
     FloatArray melFrequencySpectrum(GistSwiftWrapper* gistSwift) {
         std::vector<float> vec = gistSwift->gist.melFrequencySpectrum();

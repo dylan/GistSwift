@@ -6,11 +6,19 @@
 #ifndef GistSwiftWrapper_h
 #define GistSwiftWrapper_h
 
+// Used for returning arrays of floats.
+typedef struct FloatArray {
+    int numElements;
+    float *elements;
+} FloatArray;
+
 struct GistSwift* initGist(int audioFrameSize, int sampleRate);
 
 void deinitGist(struct GistSwift* gistSwift);
 
 void processAudioFrame(struct GistSwift* gistSwift, float *buffer, unsigned long sample);
+
+FloatArray magnitudeSpectrum(struct GistSwift* gistSwift);
 
 const float rootMeanSquare(struct GistSwift* gistSwift);
 
@@ -39,11 +47,6 @@ const float complexSpectralDifference(struct GistSwift* gistSwift);
 const float highFrequencyContent(struct GistSwift* gistSwift);
 
 const float pitch(struct GistSwift* gistSwift);
-
-typedef struct FloatArray {
-    int numElements;
-    float *elements;
-} FloatArray;
 
 FloatArray melFrequencySpectrum(struct GistSwift* gistSwift);
 
