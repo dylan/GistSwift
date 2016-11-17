@@ -3,7 +3,7 @@
 ///    | (_ | (_-<  _\__ \ V  V / |  _|  _|
 //      \___|_/__/\__|___/\_/\_/|_|_|  \__|
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for GistSwift.
 FOUNDATION_EXPORT double GistSwiftVersionNumber;

@@ -5,6 +5,7 @@
 
 #include "Gist.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct FloatArray {
     int numElements;
