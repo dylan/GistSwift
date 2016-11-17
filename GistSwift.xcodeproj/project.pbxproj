@@ -587,6 +587,7 @@
 				FC66A6AF1DDD43F100CA4EB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC7F3ED31DD63DCF00E16B3E /* Build configuration list for PBXProject "GistSwift" */ = {
 			isa = XCConfigurationList;

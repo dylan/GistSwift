@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FC7F3ED81DD63DCF00E16B3E"
-               BuildableName = "GistSwift_iOS.framework"
+               BuildableName = "GistSwift.framework"
                BlueprintName = "GistSwift_iOS"
                ReferencedContainer = "container:GistSwift.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FC7F3ED81DD63DCF00E16B3E"
-            BuildableName = "GistSwift_iOS.framework"
+            BuildableName = "GistSwift.framework"
             BlueprintName = "GistSwift_iOS"
             ReferencedContainer = "container:GistSwift.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FC7F3ED81DD63DCF00E16B3E"
-            BuildableName = "GistSwift_iOS.framework"
+            BuildableName = "GistSwift.framework"
             BlueprintName = "GistSwift_iOS"
             ReferencedContainer = "container:GistSwift.xcodeproj">
          </BuildableReference>
