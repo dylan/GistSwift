@@ -14,7 +14,7 @@ GistSwift is a wrapper framework for the awesome [Gist](https://github.com/adams
 
 ### Carthage
 ```OGDL
-github "dylan/GistSwift" "master"
+github "dylan/GistSwift"
 ```
 
 ## Usage
