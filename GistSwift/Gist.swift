@@ -28,12 +28,14 @@ public final class Gist {
         GistSwiftWrapper.processAudioFrame(gist, &frame, UInt(frame.count))
     }
 
-    /// Gist automatically calculates the magnitude spectrum when processAudioFrame() is called, this function returns it.
+    /// Gist automatically calculates the magnitude spectrum when
+    /// processAudioFrame() is called, this function returns it.
     ///
     /// - returns: The current magnitude spectrum.
     public func magnitudeSpectrum() -> [Float] {
         let value = GistSwiftWrapper.magnitudeSpectrum(gist)
-        let bufferPointer = UnsafeBufferPointer<Float>(start: value.elements, count: Int(value.numElements))
+        let bufferPointer = UnsafeBufferPointer<Float>(start: value.elements,
+                                                       count: Int(value.numElements))
         defer {
             free(value.elements)
         }
@@ -42,21 +44,24 @@ public final class Gist {
 
 // MARK: - Core Time Domain Features
 
-    /// The average signal energy observed in each audio frame, i.e., an indication of signal energy or loudness.
+    /// The average signal energy observed in each audio frame, i.e., an
+    /// indication of signal energy or loudness.
     ///
     /// - returns: The root mean square (RMS) of the currently stored audio frame.
     public func rootMeanSquare() -> Float {
         return GistSwiftWrapper.rootMeanSquare(gist)
     }
 
-    /// The maximum observed signal value in each audio frame, i.e., an indication of signal energy or loudness.
+    /// The maximum observed signal value in each audio frame, i.e., an
+    /// indication of signal energy or loudness.
     ///
     /// - returns: The peak energy of the currently stored audio frame.
     public func peakEnergy() -> Float {
         return GistSwiftWrapper.peakEnergy(gist)
     }
 
-    /// The count of zero crossings in each observed frame, i.e., A feature giving an indication of the brightness of a sound.
+    /// The count of zero crossings in each observed frame, i.e., A feature
+    /// giving an indication of the brightness of a sound.
     ///
     /// - returns: The count of zero crossings in each observed frame.
     public func zeroCrossingRate() -> Float {
@@ -65,21 +70,24 @@ public final class Gist {
 
 // MARK: - Core Frequency Domain Features
 
-    /// The centre of mass of the magnitude spectrum, i.e., a feature correlated with the brightness of a sound.
+    /// The centre of mass of the magnitude spectrum, i.e., a feature correlated
+    /// with the brightness of a sound.
     ///
     /// - returns: The spectral centroid from the magnitude spectrum.
     public func spectralCentroid() -> Float {
         return GistSwiftWrapper.spectralCentroid(gist)
     }
 
-    /// The ratio of the maximum value in the power spectrum to the mean, i.e., the measure of how tonal the signal is.
+    /// The ratio of the maximum value in the power spectrum to the mean, i.e.,
+    /// the measure of how tonal the signal is.
     ///
     /// - returns: The spectral crest.
     public func spectralCrest() -> Float {
         return GistSwiftWrapper.spectralCrest(gist)
     }
 
-    /// The geometric mean of the magnitude spectrum divided by the arithmetic mean, i.e., an indication of how "noise-like" the signal is.
+    /// The geometric mean of the magnitude spectrum divided by the arithmetic
+    /// mean, i.e., an indication of how "noise-like" the signal is.
     ///
     /// - returns: The spectral flatness of the magnitude spectrum.
     public func spectralFlatness() -> Float {
@@ -103,43 +111,54 @@ public final class Gist {
         return GistSwiftWrapper.energyDifference(gist)
     }
 
-    /// - returns: Calculates the spectral difference onset detection function sample for the magnitude spectrum frame.
+    /// - returns: Calculates the spectral difference onset detection function
+    ///            sample for the magnitude spectrum frame.
     public func spectralDifference() -> Float {
         return GistSwiftWrapper.spectralDifference(gist)
     }
 
-    /// - returns: Calculates the half wave rectified spectral difference between the current magnitude spectrum and the previous magnitude spectrum.
+    /// - returns: Calculates the half wave rectified spectral difference
+    ///            between the current magnitude spectrum and the previous
+    ///            magnitude spectrum.
     public func spectralDifferenceHWR() -> Float {
         return GistSwiftWrapper.spectralDifferenceHWR(gist)
     }
 
-    /// - returns: Calculates the complex spectral difference from the real and imaginary parts of the FFT.
+    /// - returns: Calculates the complex spectral difference from the real and
+    ///            imaginary parts of the FFT.
     public func complexSpectralDifference() -> Float {
         return GistSwiftWrapper.complexSpectralDifference(gist)
     }
 
-    /// - returns: Calculates the high frequency content onset detection function from the magnitude spectrum.
+    /// - returns: Calculates the high frequency content onset detection
+    ///            function from the magnitude spectrum.
     public func highFrequencyContent() -> Float {
         return GistSwiftWrapper.highFrequencyContent(gist)
     }
 
 // MARK: - Pitch Detection
 
-    /// An implementation of the Yin pitch detection algorithm by de Cheveigne and Kawahara (2002). Output in Hz.
+    /// An implementation of the Yin pitch detection algorithm by de Cheveigne
+    /// and Kawahara (2002). Output in Hz.
     ///
-    /// - returns: An estimation of the pitch in Hz of a sound - for use on monophonic signals only.
+    /// - returns: An estimation of the pitch in Hz of a sound - for use on
+    ///            monophonic signals only.
     public func pitch() -> Float {
         return GistSwiftWrapper.pitch(gist)
     }
 
 // MARK: - Mel Frequency Related
 
-    /// The magnitude spectrum mapped on to a Mel scale using a bank of triangular filters, i.e., a feature showing you how energy is distributed across the frequency range, on a scale related to human perception.
+    /// The magnitude spectrum mapped on to a Mel scale using a bank of
+    /// triangular filters, i.e., a feature showing you how energy is
+    /// distributed across the frequency range, on a scale related to human
+    /// perception.
     ///
     /// - returns: The Mel Frequency Spectrum.
     public func melFrequencySpectrum() -> [Float] {
         let value = GistSwiftWrapper.melFrequencySpectrum(gist)
-        let bufferPointer = UnsafeBufferPointer<Float>(start: value.elements, count: Int(value.numElements))
+        let bufferPointer = UnsafeBufferPointer<Float>(start: value.elements,
+                                                       count: Int(value.numElements))
         defer {
             free(value.elements)
         }
@@ -149,7 +168,8 @@ public final class Gist {
     /// - returns: the Mel Frequency Cepstral Coefficients as an array of ```Float```.
     public func melFrequencyCepstralCoefficients() -> [Float] {
         let value = GistSwiftWrapper.melFrequencyCepstralCoefficients(gist)
-        let bufferPointer = UnsafeBufferPointer<Float>(start: value.elements, count: Int(value.numElements))
+        let bufferPointer = UnsafeBufferPointer<Float>(start: value.elements,
+                                                       count: Int(value.numElements))
         defer {
             free(value.elements)
         }
