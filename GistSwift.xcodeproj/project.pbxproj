@@ -300,11 +300,11 @@
 			};
 			buildConfigurationList = FC7F3ED31DD63DCF00E16B3E /* Build configuration list for PBXProject "GistSwift" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = FC7F3ECF1DD63DCF00E16B3E;
 			productRefGroup = FC7F3EDA1DD63DCF00E16B3E /* Products */;
